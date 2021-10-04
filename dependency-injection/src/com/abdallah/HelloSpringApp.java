@@ -1,21 +1,22 @@
 package com.abdallah;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class HelloSpringApp {
 
 	public static void main(String[] args) {
 
 		// load the spring configuration file
-		ClassPathXmlApplicationContext context = 
-				new ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = 
+				new AnnotationConfigApplicationContext(ProjectConfig.class);
 				
 		// retrieve bean from spring container
-		Coach theCoach = context.getBean(TennisCoach.class);
-		
+		TennisCoach theCoach = context.getBean(TennisCoach.class);
 		
 		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
+		
+		System.out.println(theCoach.getEmail());
 				
 		// close the context
 		context.close();
