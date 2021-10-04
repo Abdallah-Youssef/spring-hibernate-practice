@@ -10,17 +10,8 @@
 	
     <!-- Define your beans here -->
     
-    <!-- define the dependency -->
-    <bean id="myFortuneService"
-    		class="com.abdallah.HappyFortuneService">
-    	</bean>
-    
- 	<bean id="myCoach"
- 		class="com.abdallah.TrackCoach">	
- 		
- 		<!-- set up constructor injection -->
- 		<constructor-arg ref="myFortuneService" />
- 	</bean>
+	<context:component-scan base-package="com.abdallah"/>
+
     
 </beans>
 
