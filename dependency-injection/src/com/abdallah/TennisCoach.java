@@ -13,7 +13,6 @@ public class TennisCoach implements Coach {
 	public String getDailyWorkout() {
 		return "Practice back hand";
 	}
-
 	
 	public String getEmail() {
 		return "Email: " + email;
